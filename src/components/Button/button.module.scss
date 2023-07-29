@@ -1,69 +1,34 @@
 .button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    padding: 0.7rem 3rem;
+    box-shadow: var(--box-shadow);
 
-  padding: 0.7rem 3rem;
-
-  cursor: pointer;
-  box-sizing: border-box;
-
-  border: 0;
-
-  &[disabled] {
-    cursor: not-allowed;
-  }
+    &[disabled] {
+        cursor: not-allowed
+    }
 }
 
 .primary {
-  background: var(--color-primary);
-  color: var(--color-white);
+    background: var(--color-primary);
+    color: var(--color-white);
 
-  &[disabled] {
-    background: var(--dark-gray);
-    color: var(--light-gray);
-  }
+    &[disabled] {
+        background: var(--dark-gray);
+        color: var(--light-gray);
+    }
 }
 
 .secondary {
-  background: var(--color-white);
-  color: var(--color-primary);
+    background: var(--color-white);
+    color: var(--color-primary);
 
-  &[disabled] {
-    background: var(--light-gray);
-    color: var(--dark-gray);
-  }
-}
-
-.outlined {
-  background: var(--color-white);
-  color: var(--color-gray_50);
-  border: 1px solid var(--border-outlined);
-
-  &[disabled] {
-    background: var(--light-gray);
-    color: var(--dark-gray);
-  }
-}
-
-.xsmall {
-  width: 50px;
-  height: 42px;
-}
-
-.small {
-  width: 120px;
-  height: 35px;
-}
-
-.medium {
-  width: 191px;
-  height: 42px;
-  line-height: 40px;
-}
-
-.large {
-  width: 100%;
-  padding: 12.5px 0;
-  border-radius: 4px;
+    &[disabled] {
+        background: var(--light-gray);
+        color: var(--dark-gray);
+    }
 }

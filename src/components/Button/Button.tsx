@@ -1,25 +1,43 @@
-import React, { CSSProperties, PropsWithChildren } from 'react'
 import classNames from 'classnames'
-import styles from './button.module.scss'
+import React from 'react'
+import styles from './Button.module.scss';
 
-type TButtonType = 'submit' | 'button' | 'reset'
-
-type TButton = {
-  type?: TButtonType
-  size?: 'xsmall' | 'small' | 'medium' | 'large'
-  variant?: 'outlined' | 'contained'
-  secondary?: boolean
-  style?: CSSProperties
-  className?: string
+interface IButtonProps {
+  type?: 'submit' | 'reset' | 'button' | undefined;
+  secondary?: boolean;
+  bgColor?: string;
+  fgColor?: string;
+  width?: string;
+  [x: string]: any;
 }
 
-const Button = ({ type = 'submit', size = 'medium', variant, secondary = false, style, className, children, ...rest }: PropsWithChildren<TButton>) => {
-  const composeClasses = classNames(styles.button, styles[size], styles.valiant, secondary ? styles.secondary : styles.primary, className ? className : null)
+const Button = ({
+  type = 'button',
+  secondary = false,
+  bgColor,
+  fgColor,
+  width,
+  ...restProps
+}: IButtonProps) => {
+
+  const composeClasses = classNames(
+    styles.button,
+    secondary ? styles.secondary : styles.primary
+  )
+
+  const style = {
+    backgroundColor: bgColor || '',
+    color: fgColor || '',
+    width: width || '',
+  };
 
   return (
-    <button className={composeClasses} type={type} style={{ ...style }} {...rest}>
-      {children}
-    </button>
+    <button
+      className={composeClasses}
+      type={type}
+      style={style}
+      {...restProps}
+    />
   )
 }
 

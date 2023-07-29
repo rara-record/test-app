@@ -1,6 +1,6 @@
 // TestComponent.test.js
 import { render, screen } from '@testing-library/react'
-import TestComponent from '@/components/ui-test'
+import TestComponent from './page'
 
 describe('<TestComponent>', () => {
   it('테스트 컴포넌트가 정상적으로 렌더링되어야 합니다.', () => {
